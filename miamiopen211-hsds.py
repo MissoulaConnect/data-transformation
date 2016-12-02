@@ -5,6 +5,7 @@
 import os
 import sys
 import ast
+import glob
 import sqlite3
 import pymssql
 import argparse
@@ -43,6 +44,8 @@ def main():
     args = parser.parse_args()
 
     databaseName = 'MiamiOpen211.db'
+    outputFolder = 'miamiopen211'
+    mssqlConnection = 'mssql+pymssql://cr:communityresource2016!@localhost:1433/community_resource'
     
     print('Parameters Provided')    
     print('-------------------')
@@ -62,17 +65,17 @@ def main():
     # Start ETL
     print(strftime('%X'), 'Start')    
     if extract:
-        # A1. Extract
+        # Extract
         # If Extract Flag is True (default), download these tables from Miami's db
         #    1. Provider
         #    2. Provider Target Population
         #    3. Provider Taxonomy
-        print(strftime('%X'), 'A1. Extract')
+        print(strftime('%X'), 'Extract')
         print(strftime('%X'), 'Connecting to Miami Open211 SQL Server')
 
         # Connect to SQL server (ensure SSH tunnel is open if remote)
         try:
-            engine = create_engine('mssql+pymssql://cr:communityresource2016!@localhost:1433/community_resource', echo=False)
+            engine = create_engine(mssqlConnection, echo=False)
             Session = sessionmaker(bind=engine)
             Session.configure(bind=engine)
             session = Session()   
@@ -113,11 +116,11 @@ def main():
             print(strftime('%X'), 'Error closing database:', sys.exc_info()[0])    
             print(sys.exc_info()[2])
             
-    # A2. Transform
+    # Transform
     # Add timestamp column to each table: indicates date and time downloaded in UTC
     # Index tables
     if extract:
-        print(strftime('%X'), 'A2. Transform')
+        print(strftime('%X'), 'Transform')
         try:
             etl_timestamp = datetime.datetime.utcnow()    
             dfProvider['etl_timestamp'] = etl_timestamp
@@ -156,12 +159,12 @@ def main():
         print(sys.exc_info()[2])
         return
         
-    # A3. Load    
+    # Load    
     # Add tables to db
     #     Create the table if it doesn't exist
     #     Use src_ schema
     if extract:
-        print(strftime('%X'), 'A3. Load')
+        print(strftime('%X'), 'Load')
         try:
             dfProvider.to_sql('src_provider', engine, if_exists='replace', index=True)
             dfTargetPopulation.to_sql('src_provider_target_population', engine, if_exists='replace', index=True)       
@@ -173,115 +176,77 @@ def main():
             print(strftime('%X'), 'Error saving incoming tables:', sys.exc_info()[0])  
             print(sys.exc_info()[2])        
             return        
-    """
-    Skipping this section for now        
-    # B1. Merge
-    # Create src_metadata if it doesn't exist
-    # Save changes between versions [excluding timestamp]
-    # Update m211_ tables    
-    if extract:   
-        print(strftime('%X'), 'B1. Merge')
-        baseTableNames = ['provider', 'provider_taxonomy', 'provider_target_population']
-        m211 = 'm211_'
-        src = 'src_'
-        
-        # Create m211_ tables if they don't exist
-        try:
-            for baseTable in baseTableNames:
-                if not engine.dialect.has_table(engine, m211+baseTable):  # If table don't exist, Create.
-                    tableName = src+baseTable
-                    sqlQuery = "select sql from sqlite_master where tbl_name = '"+tableName+"'"                
-                    dfResult, returnCode = getTable(sqlQuery, tableName, engine)
-                    dfResult['sql'] = dfResult['sql'].str.replace(src, m211)
-                    for row in dfResult.iterrows():
-                        result = engine.execute(row[1][0])
-            session.commit()                 
-            print(strftime('%X'), 'm211 tables created')                                        
-        except:
-            session.rollback()
-            print(strftime('%X'), 'Error creating m211 tables:', sys.exc_info()[0])  
-            print(sys.exc_info()[2])        
-            return        
-
-        # Fetch m211_ tables
-        tableName = 'm211_provider'    
-        sqlQuery = 'select * from ' + tableName + ';'   
-        dfProviderM211 = pd.DataFrame()           
-        dfProviderM211, returnCode = getTable(sqlQuery, tableName, engine)
-        if returnCode is not None:
-            return
-
-        tableName = 'm211_provider_target_population'    
-        sqlQuery = 'select * from ' + tableName + ';'   
-        dfTargetPopulationM211 = pd.DataFrame()           
-        dfTargetPopulationM211, returnCode = getTable(sqlQuery, tableName, engine)
-        if returnCode is not None:
-            return
             
-
-        tableName = 'm211_provider_taxonomy'    
-        sqlQuery = 'select * from ' + tableName + ';'   
-        dfTaxonomyM211 = pd.DataFrame()           
-        dfTaxonomyM211, returnCode = getTable(sqlQuery, tableName, engine)
-        if returnCode is not None:
-            return
-
-        # Set the index and change the column order to match the src tables
+        # Close connection
         try:
-            dfProviderM211.set_index(['provider_id'], inplace=True)
-            dfProviderM211 = dfProviderM211[dfProvider.columns.values]
-            dfTargetPopulationM211.set_index(['provider_service_code_id', 'target_population_code'], inplace=True)
-            dfTaxonomyM211.set_index(['provider_service_code_id'], inplace=True)
-            print(strftime('%X'), 'Added index(es) to m211 tables')
+            session.close()
+            engine.dispose()
+            print(strftime('%X'), 'Disconnected from sqlite database')        
         except:
-            print(strftime('%X'), 'Error adding index(es) to m211 tables:', sys.exc_info()[0])  
+            print(strftime('%X'), 'Error closing sqlite database:', sys.exc_info()[0])    
             print(sys.exc_info()[2])
-            return
-
-        ne_stacked = (dfProvider != dfProviderM211).stack()
-        changed = ne_stacked[ne_stacked]
-        changed.index.names = ['provider_id', 'col']
-            
-        differences = np.where(dfProvider != dfProviderM211)
-        changed_from = dfProvider.values[differences]
-        changed_to = dfProviderM211.values[differences]
-        dfDiff = pd.DataFrame({'from': changed_from, 'to': changed_to}, index=changed.index)
-   
-        print(dfDiff.head())
-        
-        print(dfProvider.columns.values)
-        print(dfProviderM211.columns.values)
-        print(dfProvider.index)
-        print(dfProviderM211.index)
-    """
-        
-    # C1. Extract
+          
+    # Extract & Transform
     # Get subset of HSDS from existing data
-    print(strftime('%X'), 'C1. Extract')
-    
-    # C2. Transform 
-    # Apply necessary changes to make it hsds
-    print(strftime('%X'), 'C2. Transform ')
-    
-    # C3. Load
-    # Add data to table in hsds_ schema
-    # Update hsds_metadata
-    print(strftime('%X'), 'C3. Load')
+    #   Drop existing HSDS tables
+    print(strftime('%X'), 'Extract')
+    try:
+        sqlScripts = sorted(glob.glob(os.path.join('sql-scripts', '*.sql')))
+        print(strftime('%X'), len(sqlScripts),'SQL scripts to run')           
+    except:
+        session.rollback()
+        print(strftime('%X'), 'Error retreiving SQL scripts:', sys.exc_info()[0])  
+        print(sys.exc_info()[2])        
+        return       
+
+    print(strftime('%X'), 'Transform & Load')    
+    try:
+        for sqlScript in sqlScripts:
+            sqlQuery = open(sqlScript, 'r').read()
+            conn = sqlite3.connect(databaseName)
+            c = conn.cursor()
+            c.executescript(sqlQuery)
+            conn.commit()
+            c.close()
+            conn.close() 
+            print(strftime('%X'), 'Script:', os.path.split(sqlScript)[1])           
+    except:
+        session.rollback()
+        print(strftime('%X'), 'Error running sql script', sqlScript, sys.exc_info()[0])  
+        print(sys.exc_info()[2])        
+        return        
+
     
     # D1. Export
     # Save data to csv files
     # Create json package file
-    print(strftime('%X'), 'D1. Export')
-
-    # Close connection
-    try:
-        session.close()
-        engine.dispose()
-        print(strftime('%X'), 'Disconnected from sqlite database')        
-    except:
-        print(strftime('%X'), 'Error closing sqlite database:', sys.exc_info()[0])    
-        print(sys.exc_info()[2])
+    print(strftime('%X'), 'Export')
+    
+    # Fetch hsds tables        
+    tableName = 'sqlite_master'    
+    sqlQuery = "select name from " + tableName + " where name like 'hsds%' and type ='table';"
+    dfHSDS = pd.DataFrame()           
+    dfHSDS, returnCode = getTable(sqlQuery, tableName, engine)
+    if returnCode is not None:
+        return
+    
+    for index, row in dfHSDS.iterrows():
+        tableName = row['name']
+        sqlQuery = 'select * from ' + tableName + ';'
+        df = pd.DataFrame()
+        df, returnCode = getTable(sqlQuery, tableName, engine)
+        if returnCode is not None:
+            return
         
+        try:
+            csvName = tableName.replace('hsds_','')+'.csv'
+            df.to_csv(os.path.join(outputFolder,csvName), index=False, float_format='%.f')    
+            print(strftime('%X'), 'Create csv:', csvName)  
+        except:
+            print(strftime('%X'), 'Error creating csv', csvName, sys.exc_info()[0])  
+            print(sys.exc_info()[2])        
+            return        
+              
     print(strftime('%X'), 'Complete')    
 if __name__ == "__main__":
     main()
