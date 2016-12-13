@@ -11,6 +11,9 @@
 --legal_status 	        string 	        The legal status defines the conditions that an organization is operating under; 
 --                                    e.g. non-profit, private corporation or a government organization. 	                        False 	    False
 
+-- Enable use of foreign keys
+PRAGMA foreign_keys = ON;
+
 create table hsds_organization(
   id INTEGER PRIMARY KEY,
   name TEXT,
@@ -24,6 +27,39 @@ create table hsds_organization(
   legal_status TEXT
 );
 
+create table tmp_organization as
+-- Has Parent and parent exists in the src_provider table
+select distinct s2.provider_id +1 as id, --Issue 1: Format does not match HSDS
+        s2.provider_id as original_id,
+		s2.provider_name as name,
+		s2.provider_aka as alternate_name,
+		coalesce(s2.provider_description,'No description provided') as description,
+		null as email,
+		s2.website_address as url,
+		null as tax_status,
+		null as tax_id,
+		null as year_incorporated,
+		null as legal_status
+from src_provider s1
+inner join src_provider s2 on s1.parent_provider_id = s2.provider_id -- < this is the parent provider
+union
+-- Top Level Agencies: No parents
+select distinct s1.provider_id +1 as id, --Issue 1: Format does not match HSDS
+        s1.provider_id as original_id,
+		s1.provider_name as name,
+		s1.provider_aka as alternate_name,
+		coalesce(s1.provider_description,'No description provided') as description,
+		null as email,
+		s1.website_address as url,
+		null as tax_status,
+		null as tax_id,
+		null as year_incorporated,
+		null as legal_status
+from src_provider s1
+left outer join src_provider s2 on s1.parent_provider_id = s2.provider_id -- < this is the parent provider
+where s1.parent_provider_id is null
+or    s2.provider_id is null;
+
 insert into hsds_organization(
   id,
   name,
@@ -36,7 +72,7 @@ insert into hsds_organization(
   year_incorporated,
   legal_status
 )
-select   id+1,
+select   distinct id,
           name,
           alternate_name,
           description,
@@ -46,34 +82,5 @@ select   id+1,
           tax_id,
           year_incorporated,
           legal_status
-from (
-	-- Parent
-	select distinct s2.provider_id as id, --Issue 1: Format does not match HSDS
-			s2.provider_name as name,
-			s2.provider_aka as alternate_name,
-			coalesce(s2.provider_description,'No description provided') as description,
-			null as email,
-			s2.website_address as url,
-			null as tax_status,
-			null as tax_id,
-			null as year_incorporated,
-			null as legal_status
-	from src_provider s1
-	inner join src_provider s2 on s1.parent_provider_id = s2.provider_id
-	where s2.provider_id is not null
-	union
-	-- Top Level Agencies
-	select distinct s1.provider_id as id, --Issue 1: Format does not match HSDS
-			s1.provider_name as name,
-			s1.provider_aka as alternate_name,
-			coalesce(s1.provider_description,'No description provided') as description,
-			null as email,
-			s1.website_address as url,
-			null as tax_status,
-			null as tax_id,
-			null as year_incorporated,
-			null as legal_status
-	from src_provider s1
-	where s1.parent_provider_id is null
-) organization
+from tmp_organization
 order by id;

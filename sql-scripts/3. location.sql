@@ -7,13 +7,16 @@
 --transportation 	string 	        A description of the access to public or private transportation to and from the location. 	False 	    False
 --latitude 	        number 	        Y coordinate of location expressed in decimal degrees in WGS84 datum. 	                    False 	    False
 --longitude 	    number 	        X coordinate of location expressed in decimal degrees in WGS84 datum. 	                    False 	    False
-
+-- description	required	Description of services provided at the location
 --------------------------------------------------------------------------------------------------------------------------
 --                                                                     Assumptions:                                                        --
 --------------------------------------------------------------------------------------------------------------------------
 -- Services are provided at locations attached to each program (agency)
 -- Services are provided at locations attached to  each provider (parent)
 --------------------------------------------------------------------------------------------------------------------------
+
+-- Enable use of foreign keys
+PRAGMA foreign_keys = ON;
 
 create table hsds_location(
   id INTEGER PRIMARY KEY,
@@ -22,7 +25,9 @@ create table hsds_location(
   alternate_name TEXT,
   transportation TEXT,
   latitude REAL,
-  longitude REAL
+  longitude REAL,
+  description TEXT,
+  FOREIGN KEY (organization_id) references hsds_organization(id) ON DELETE CASCADE  
 );
 
 insert into hsds_location(
@@ -32,13 +37,16 @@ insert into hsds_location(
   alternate_name,
   transportation,
   latitude,
-  longitude
+  longitude,
+  description
 )
-select provider_id+1 as id, 
-	coalesce(parent_provider_id, provider_id) + 1 as organization_id, 
-	ltrim(rtrim(coalesce(city,''))) || case when city is not null and province is not null then ', ' else '' end || ltrim(rtrim(coalesce(province, ''))) as name,
-	null as alternate_name,
-	null as transportation,
-	Latitude,
-	Longitude
-from src_provider;
+select tp.program_id id,
+		tp.organization_id,
+		ltrim(rtrim(coalesce(sp.city,''))) || case when sp.city is not null and sp.province is not null then ', ' else '' end || ltrim(rtrim(coalesce(sp.province, ''))) as name,
+		null as alternate_name,
+		null as transportation,
+		sp.Latitude,
+		sp.Longitude,
+		'See listed services'	      
+from    tmp_program tp
+inner join src_provider sp on tp.agency_id = sp.provider_id

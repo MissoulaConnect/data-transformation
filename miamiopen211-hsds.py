@@ -205,6 +205,7 @@ def main():
             sqlQuery = open(sqlScript, 'r').read()
             conn = sqlite3.connect(databaseName)
             c = conn.cursor()
+            c.execute("PRAGMA foreign_keys = ON")
             c.executescript(sqlQuery)
             conn.commit()
             c.close()
