@@ -28,15 +28,15 @@ insert into hsds_service_at_location(
   location_id,  
   url ,
   email)
-select s.provider_service_code_id as id,
-		s.provider_service_code_id as service_id,
-		tp.program_id as location_id,
-		sp.website_address as url,
-		null as email
-from src_provider_taxonomy s
-inner join tmp_program tp on s.provider_id = tp.agency_id
-inner join src_provider sp on s.provider_id  = sp.provider_id
-inner join hsds_service hs on s.provider_service_code_id = hs.id
-inner join hsds_location hl on tp.program_id = hl.id
-where s.taxonomy_facet = 'Service';
+select tp.program_id as id,
+	   tp.program_id as service_id,
+	   tp.program_id as location_id,
+	   sp.website_address as url,
+	   null as email
+from src_provider sp
+inner join tmp_program tp on sp.provider_id = tp.agency_id
+inner join hsds_program p on tp.program_id = p.id
+inner join hsds_organization o on tp.organization_id = o.id
+inner join hsds_location l on tp.program_id = l.id
+where sp.provider_id in (select provider_id from src_provider_taxonomy where taxonomy_facet = 'Service');
 		

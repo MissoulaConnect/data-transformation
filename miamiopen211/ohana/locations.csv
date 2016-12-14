@@ -551,12 +551,9 @@ id,organization_id,accessibility,admin_emails,alternate_name,description,email,l
 1038,1015,,,,See listed services,,,26.0,-80.0,"Miami Beach, FL",,,,False
 1053,1053,,,,See listed services,,,,,"Tallahassee, FL",,,,False
 1055,1055,,,,See listed services,,,26.0,-80.0,"Miami, FL",,,,False
-1056,1055,,,,See listed services,,,26.0,-80.0,"Miami, FL",,,,False
 1057,1055,,,,See listed services,,,26.0,-80.0,"Miami, FL",,,,False
 1058,1055,,,,See listed services,,,26.0,-80.0,"Miami, FL",,,,False
 1059,1055,,,,See listed services,,,26.0,-80.0,"Miami, FL",,,,False
-1062,1055,,,,See listed services,,,26.0,-80.0,"Miami, FL",,,,False
-1063,1055,,,,See listed services,,,26.0,-80.0,"Miami, FL",,,,False
 1064,1064,,,,See listed services,,,,,"Miami Beach, FL",,,,False
 1066,1066,,,,See listed services,,,26.0,-80.0,"North Miami Beach, FL",,,,False
 1067,1066,,,,See listed services,,,26.0,-80.0,"Cutler Bay, FL",,,,False
@@ -1470,12 +1467,12 @@ id,organization_id,accessibility,admin_emails,alternate_name,description,email,l
 2954,2949,,,,See listed services,,,26.0,-80.0,"Hialeah, FL",,,,False
 2956,2956,,,,See listed services,,,26.0,-80.0,"Miami, FL",,,,False
 2957,2956,,,,See listed services,,,25.0,-80.0,"Homestead, FL",,,,False
-2958,2956,,,,See listed services,,,26.0,-80.0,"Miami, FL",,,,False
+2958,2956,,,,See listed services,,,26.0,-80.0,"North Miami, FL",,,,False
 2959,2956,,,,See listed services,,,26.0,-80.0,"Miami, FL",,,,False
 2960,2956,,,,See listed services,,,,,"Miami, FL",,,,False
 2961,2956,,,,See listed services,,,26.0,-80.0,"Miami, FL",,,,False
 2963,2956,,,,See listed services,,,26.0,-80.0,"Sunny Isles Beach, FL",,,,False
-2964,2956,,,,See listed services,,,26.0,-80.0,"Hialeah, FL",,,,False
+2964,2956,,,,See listed services,,,26.0,-80.0,"Miami Lakes, FL",,,,False
 2965,2956,,,,See listed services,,,26.0,-80.0,"Miami, FL",,,,False
 2966,2956,,,,See listed services,,,26.0,-80.0,"Miami, FL",,,,False
 2967,2956,,,,See listed services,,,26.0,-80.0,"Miami, FL",,,,False
@@ -1491,15 +1488,15 @@ id,organization_id,accessibility,admin_emails,alternate_name,description,email,l
 2977,2956,,,,See listed services,,,26.0,-80.0,"Hialeah, FL",,,,False
 2978,2956,,,,See listed services,,,26.0,-80.0,"North Miami Beach, FL",,,,False
 2979,2956,,,,See listed services,,,26.0,-80.0,"Miami, FL",,,,False
-2980,2956,,,,See listed services,,,26.0,-80.0,"Miami Beach, FL",,,,False
+2980,2956,,,,See listed services,,,26.0,-80.0,"North Bay Village, FL",,,,False
 2981,2956,,,,See listed services,,,26.0,-80.0,"Miami, FL",,,,False
-2982,2956,,,,See listed services,,,26.0,-80.0,"Miami Beach, FL",,,,False
-2983,2956,,,,See listed services,,,26.0,-80.0,"Miami, FL",,,,False
-2984,2956,,,,See listed services,,,26.0,-80.0,"Miami, FL",,,,False
-2985,2956,,,,See listed services,,,26.0,-80.0,"Miami, FL",,,,False
-2986,2956,,,,See listed services,,,26.0,-80.0,"Miami, FL",,,,False
+2982,2956,,,,See listed services,,,26.0,-80.0,"Fisher Island, FL",,,,False
+2983,2956,,,,See listed services,,,26.0,-80.0,"Miami Shores, FL",,,,False
+2984,2956,,,,See listed services,,,26.0,-80.0,"Cutler Ridge, FL",,,,False
+2985,2956,,,,See listed services,,,26.0,-80.0,"North Miami Beach, FL",,,,False
+2986,2956,,,,See listed services,,,26.0,-80.0,"Miami Springs, FL",,,,False
 2987,2956,,,,See listed services,,,26.0,-80.0,"Opa Locka, FL",,,,False
-2988,2956,,,,See listed services,,,26.0,-80.0,"Miami, FL",,,,False
+2988,2956,,,,See listed services,,,26.0,-80.0,"Miami Gardens, FL",,,,False
 2989,2956,,,,See listed services,,,26.0,-80.0,"Miami, FL",,,,False
 2990,2956,,,,See listed services,,,26.0,-80.0,"Miami, FL",,,,False
 2991,2956,,,,See listed services,,,26.0,-80.0,"Hialeah, FL",,,,False
@@ -1508,17 +1505,17 @@ id,organization_id,accessibility,admin_emails,alternate_name,description,email,l
 2994,2956,,,,See listed services,,,26.0,-80.0,"Miami, FL",,,,False
 2995,2956,,,,See listed services,,,26.0,-80.0,"Miami, FL",,,,False
 2996,2956,,,,See listed services,,,26.0,-80.0,"Miami, FL",,,,False
-2997,2956,,,,See listed services,,,26.0,-80.0,"Hialeah, FL",,,,False
-2998,2956,,,,See listed services,,,26.0,-80.0,"Miami, FL",,,,False
-2999,2956,,,,See listed services,,,26.0,-80.0,"Miami, FL",,,,False
+2997,2956,,,,See listed services,,,26.0,-80.0,"Miami Lakes, FL",,,,False
+2998,2956,,,,See listed services,,,26.0,-80.0,"South Miami, FL",,,,False
+2999,2956,,,,See listed services,,,26.0,-80.0,"North Miami Beach, FL",,,,False
 3000,2956,,,,See listed services,,,26.0,-80.0,"Miami, FL",,,,False
 3001,2956,,,,See listed services,,,26.0,-80.0,"Miami, FL",,,,False
 3002,2956,,,,See listed services,,,26.0,-80.0,"Miami, FL",,,,False
 3003,2956,,,,See listed services,,,26.0,-80.0,"Opa Locka, FL",,,,False
-3004,2956,,,,See listed services,,,26.0,-80.0,"Miami, FL",,,,False
+3004,2956,,,,See listed services,,,26.0,-80.0,"Perrine, FL",,,,False
 3005,2956,,,,See listed services,,,26.0,-80.0,"Miami, FL",,,,False
 3006,2956,,,,See listed services,,,26.0,-80.0,"Aventura, FL",,,,False
-3007,2956,,,,See listed services,,,26.0,-80.0,"Miami, FL",,,,False
+3007,2956,,,,See listed services,,,26.0,-80.0,"Pinecrest, FL",,,,False
 3008,2956,,,,See listed services,,,25.0,-80.0,"Homestead, FL",,,,False
 3009,2956,,,,See listed services,,,26.0,-80.0,"Miami, FL",,,,False
 3010,3010,,,,See listed services,,,,,"Hialeah, FL",,,,False
@@ -2009,10 +2006,6 @@ id,organization_id,accessibility,admin_emails,alternate_name,description,email,l
 4400,1431,,,,See listed services,,,26.0,-80.0,"Miami, FL",,,,False
 4402,1431,,,,See listed services,,,26.0,-80.0,"Miami, FL",,,,False
 4407,1431,,,,See listed services,,,26.0,-80.0,"Miami, FL",,,,False
-4408,4408,,,,See listed services,,,26.0,-80.0,"Miami, FL",,,,False
-4409,4408,,,,See listed services,,,26.0,-80.0,"Miami, FL",,,,False
-4410,4408,,,,See listed services,,,26.0,-80.0,"Miami, FL",,,,False
-4411,4408,,,,See listed services,,,26.0,-80.0,"Miami, FL",,,,False
 4414,3229,,,,See listed services,,,25.0,-81.0,"Marathon, FL",,,,False
 4415,3229,,,,See listed services,,,26.0,-80.0,"Miami, FL",,,,False
 4416,3229,,,,See listed services,,,26.0,-80.0,"Miami, FL",,,,False
@@ -2240,7 +2233,6 @@ id,organization_id,accessibility,admin_emails,alternate_name,description,email,l
 5238,5238,,,,See listed services,,,,,"Miami Gardens, FL",,,,False
 5240,5240,,,,See listed services,,,,,"Immokalee, FL",,,,False
 5242,5242,,,,See listed services,,,26.0,-82.0,"Naples, FL",,,,False
-5243,5242,,,,See listed services,,,26.0,-82.0,"Naples, FL",,,,False
 5244,5244,,,,See listed services,,,,,"Naples, FL",,,,False
 5249,5249,,,,See listed services,,,26.0,-80.0,"Miami, FL",,,,False
 5251,5216,,,,See listed services,,,26.0,-82.0,"Naples, FL",,,,False
@@ -2327,12 +2319,6 @@ id,organization_id,accessibility,admin_emails,alternate_name,description,email,l
 5409,2300,,,,See listed services,,,26.0,-80.0,"Miami, FL",,,,False
 5410,2300,,,,See listed services,,,26.0,-80.0,"Miami, FL",,,,False
 5411,2300,,,,See listed services,,,26.0,-80.0,"Miami, FL",,,,False
-5416,5242,,,,See listed services,,,26.0,-82.0,"Naples, FL",,,,False
-5417,5242,,,,See listed services,,,26.0,-82.0,"Naples, FL",,,,False
-5418,5242,,,,See listed services,,,26.0,-82.0,"Naples, FL",,,,False
-5419,5242,,,,See listed services,,,26.0,-82.0,"Naples, FL",,,,False
-5420,5242,,,,See listed services,,,26.0,-82.0,"Naples, FL",,,,False
-5421,5242,,,,See listed services,,,26.0,-82.0,"Naples, FL",,,,False
 5422,5422,,,,See listed services,,,27.0,-82.0,"North Fort Myers, FL",,,,False
 5423,5422,,,,See listed services,,,27.0,-82.0,"North Fort Myers, FL",,,,False
 5424,5424,,,,See listed services,,,,,"Houston, TX",,,,False
@@ -2427,7 +2413,6 @@ id,organization_id,accessibility,admin_emails,alternate_name,description,email,l
 5608,5601,,,,See listed services,,,26.0,-82.0,"Naples, FL",,,,False
 5609,5609,,,,See listed services,,,26.0,-80.0,"Miami, FL",,,,False
 5610,5609,,,,See listed services,,,26.0,-80.0,"Miami, FL",,,,False
-5611,5609,,,,See listed services,,,26.0,-80.0,"Miami, FL",,,,False
 5616,5609,,,,See listed services,,,26.0,-80.0,"Miami, FL",,,,False
 5617,5609,,,,See listed services,,,26.0,-80.0,"Miami, FL",,,,False
 5619,5619,,,,See listed services,,,26.0,-82.0,"Naples, FL",,,,False
@@ -2489,7 +2474,6 @@ id,organization_id,accessibility,admin_emails,alternate_name,description,email,l
 5738,5694,,,,See listed services,,,26.0,-80.0,"Miami, FL",,,,False
 5739,5694,,,,See listed services,,,26.0,-80.0,"Miami, FL",,,,False
 5740,5694,,,,See listed services,,,26.0,-80.0,"Miami, FL",,,,False
-5754,5242,,,,See listed services,,,26.0,-82.0,"Naples, FL",,,,False
 5755,5755,,,,See listed services,,,26.0,-82.0,"Naples, FL",,,,False
 5756,5755,,,,See listed services,,,26.0,-82.0,"Naples, FL",,,,False
 5757,2956,,,,See listed services,,,,,"Miami, FL",,,,False
@@ -3037,7 +3021,6 @@ id,organization_id,accessibility,admin_emails,alternate_name,description,email,l
 6884,6884,,,,See listed services,,,,,"Key West, FL",,,,False
 6886,3359,,,,See listed services,,,26.0,-80.0,"Miami, FL",,,,False
 6887,2660,,,,See listed services,,,26.0,-80.0,"Miami, FL",,,,False
-6888,1055,,,,See listed services,,,,,"Miami, FL",,,,False
 6890,3145,,,,See listed services,,,26.0,-80.0,"Miami, FL",,,,False
 6892,6892,,,,See listed services,,,26.0,-80.0,"Miami, FL",,,,False
 6893,6892,,,,See listed services,,,26.0,-80.0,"Miami, FL",,,,False
@@ -3270,8 +3253,6 @@ id,organization_id,accessibility,admin_emails,alternate_name,description,email,l
 7230,7230,,,,See listed services,,,26.0,-82.0,"Naples, FL",,,,False
 7231,7231,,,,See listed services,,,26.0,-80.0,"Miami, FL",,,,False
 7232,2,,,,See listed services,,,26.0,-80.0,"Miami, FL",,,,False
-7233,7233,,,,See listed services,,,26.0,-80.0,"Miami, FL",,,,False
-7234,7234,,,,See listed services,,,,,"Miami, FL",,,,False
 7235,7235,,,,See listed services,,,,,"Miami, FL",,,,False
 7236,7236,,,,See listed services,,,,,"Miami, FL",,,,False
 7238,7238,,,,See listed services,,,,,"Winter Park, FL",,,,False
@@ -3793,7 +3774,6 @@ id,organization_id,accessibility,admin_emails,alternate_name,description,email,l
 7848,548,,,,See listed services,,,,,"Miami, FL",,,,False
 7849,7848,,,,See listed services,,,,,"Miami, FL",,,,False
 7850,7848,,,,See listed services,,,,,"Miami, FL",,,,False
-7851,7851,,,,See listed services,,,,,"Boynton Beach, FL",,,,False
 7852,304,,,,See listed services,,,,,"Miami, FL",,,,False
 7853,5304,,,,See listed services,,,,,"Naples, FL",,,,False
 7854,5304,,,,See listed services,,,,,"Naples, FL",,,,False
@@ -4093,7 +4073,7 @@ id,organization_id,accessibility,admin_emails,alternate_name,description,email,l
 8167,1311,,,,See listed services,,,,,"Miami, FL",,,,False
 8168,3069,,,,See listed services,,,,,"Miami, FL",,,,False
 8169,8169,,,,See listed services,,,,,"Fort Lauderdale, FL",,,,False
-8171,8171,,,,See listed services,,,,,"Key Largo, FL",,,,False
+8171,8171,,,,See listed services,,,,,"Tavernier, FL",,,,False
 8172,8172,,,,See listed services,,,,,"Key Largo, FL",,,,False
 8173,8173,,,,See listed services,,,,,"Hialeah, FL",,,,False
 8174,8166,,,,See listed services,,,,,"Miami, FL",,,,False
@@ -4169,3 +4149,6 @@ id,organization_id,accessibility,admin_emails,alternate_name,description,email,l
 8247,8064,,,,See listed services,,,,,"Lauderhill, FL",,,,False
 8248,8064,,,,See listed services,,,,,"Hollywood, FL",,,,False
 8249,1256,,,,See listed services,,,,,"Miami, FL",,,,False
+8250,8250,,,,See listed services,,,,,"Miami, FL",,,,False
+8251,8250,,,,See listed services,,,,,"Miami, FL",,,,False
+8252,6328,,,,See listed services,,,,,"Miami, FL",,,,False

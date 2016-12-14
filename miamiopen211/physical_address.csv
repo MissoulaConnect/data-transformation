@@ -551,12 +551,9 @@ id,location_id,attention,address_1,address_2,address_3,address_4,city,state_prov
 1038,1038,,833 6th Street,,,,Miami Beach,FL ,33139,US
 1053,1053,,301 South Bronough Street,Suite 200,,,Tallahassee,FL ,32301,US
 1055,1055,,2490 Coral Way,,,,Miami,FL ,33145-3449,US
-1056,1056,,2490 Coral Way,,,,Miami,FL ,33145-3449,US
 1057,1057,,2490 Coral Way,,,,Miami,FL ,33145,US
 1058,1058,,2490 Coral Way,,,,Miami,FL ,33145,US
 1059,1059,,2490 Coral Way,,,,Miami,FL ,33145-3449,US
-1062,1062,,2490 Coral Way,,,,Miami,FL ,33145-3449,US
-1063,1063,,2490 Coral Way,,,,Miami,FL ,33145-3449,US
 1064,1064,,8670 Byron Avenue,,,,Miami Beach,FL ,33141,US
 1066,1066,,16101 West Dixie Highway,,,,North Miami Beach,FL ,33160,US
 1067,1067,,10700 SW 211th Street,,,,Cutler Bay,FL ,33189,US
@@ -771,7 +768,7 @@ id,location_id,attention,address_1,address_2,address_3,address_4,city,state_prov
 1470,1470,,401 NW 2nd Avenue,Suite S-321,,,Miami,FL ,33128,US
 1471,1471,,401 NW 2nd Avenue,Suite S-321,,,Miami,FL ,33128,US
 1472,1472,,475 Riverside Drive at West 120th Street,11th Floor,,,New York,NY ,10115,US
-1473,1473,,299 Alhambra Circle,Suite 309,,,Miami,FL ,33134,US
+1473,1473,,4315 NW 7th Street,Suite 36,,,Miami,FL ,33126,US
 1474,1474,,2431 Aloma Avenue,Suite 309,,,Winter Park,FL ,32792,US
 1475,1475,,2431 Aloma Avene,Suite 309,,,Winter Park,FL ,32792,US
 1477,1477,,2431 Aloma Avenue,Suite 309,,,Winter Park,FL ,32792,US
@@ -1470,12 +1467,12 @@ id,location_id,attention,address_1,address_2,address_3,address_4,city,state_prov
 2954,2954,,10001 NW 87th Avenue,,,,Hialeah,FL ,33016,US
 2956,2956,,9300 NW 41st Street,,,,Miami,FL ,33178,US
 2957,2957,,255 NW 4th Avenue,,,,Homestead,FL ,33030,US
-2958,2958,,13000 NE 16th Avenue,,,,Miami,FL ,33168,US
+2958,2958,,13000 NE 16th Avenue,,,,North Miami,FL ,33168,US
 2959,2959,,9710 NW 58th Street,,,,Miami,FL ,33166,US
 2960,2960,,11600 SW Turnpike Highway,,,,Miami,FL ,33176,US
 2961,2961,,9300 NW 41st Street,,,,Miami,FL ,33178,US
 2963,2963,,175 172 Street,,,,Sunny Isles Beach,FL ,33160,US
-2964,2964,,16699 NW 67th Avenue,,,,Hialeah,FL ,33014,US
+2964,2964,,16699 NW 67th Avenue,,,,Miami Lakes,FL ,33014,US
 2965,2965,,6460 NW 27th Avenue,,,,Miami,FL ,33147,US
 2966,2966,,3911 SW 82nd Avenue,,,,Miami,FL ,33155,US
 2967,2967,,9201 SW 152nd Street,,,,Miami,FL ,33157,US
@@ -1491,15 +1488,15 @@ id,location_id,attention,address_1,address_2,address_3,address_4,city,state_prov
 2977,2977,,8790 NW 103rd Street,,,,Hialeah,FL ,33016,US
 2978,2978,,15655 Biscayne Boulevard,,,,North Miami Beach,FL ,33160,US
 2979,2979,,7825 SW 104th Street,,,,Miami,FL ,33156,US
-2980,2980,,7903 East Drive,,,,Miami Beach,FL ,33141,US
+2980,2980,,7903 East Drive,,,,North Bay Village,FL ,33141,US
 2981,2981,,351 SW 107th Avenue,,,,Miami,FL ,33174,US
-2982,2982,,65 Fisher Island Drive,,,,Miami Beach,FL ,33109,US
-2983,2983,,9500 NE 2nd Avenue,,,,Miami,FL ,33138,US
-2984,2984,,10850 SW 211th Street,,,,Miami,FL ,33189,US
-2985,2985,,358 NE 168th Street,,,,Miami,FL ,33162,US
-2986,2986,,201 Westward Drive,,,,Miami,FL ,33166,US
+2982,2982,,65 Fisher Island Drive,,,,Fisher Island,FL ,33109,US
+2983,2983,,9500 NE 2nd Avenue,,,,Miami Shores,FL ,33138,US
+2984,2984,,10850 SW 211th Street,,,,Cutler Ridge,FL ,33189,US
+2985,2985,,358 NE 168th Street,,,,North Miami Beach,FL ,33162,US
+2986,2986,,201 Westward Drive,,,,Miami Springs,FL ,33166,US
 2987,2987,,4775 NW 199th Street,,,,Opa Locka,FL ,33055,US
-2988,2988,,575 NW 199th Street,,,,Miami,FL ,33169,US
+2988,2988,,575 NW 199th Street,,,,Miami Gardens,FL ,33169,US
 2989,2989,,975 SW 62nd Avenue,,,,Miami,FL ,33144,US
 2990,2990,,13390 SW 152nd Street,,,,Miami,FL ,33177,US
 2991,2991,,7700 NW 186th Street,,,,Hialeah,FL ,33015,US
@@ -1508,17 +1505,17 @@ id,location_id,attention,address_1,address_2,address_3,address_4,city,state_prov
 2994,2994,,21520 SW 87th Avenue,,,,Miami,FL ,33189,US
 2995,2995,,12700 SW 6th Street,,,,Miami,FL ,33193,US
 2996,2996,,8501 SW 127th Avenue,,,,Miami,FL ,33183,US
-2997,2997,,8205 Commerce Way,,,,Hialeah,FL ,33016,US
-2998,2998,,5860 SW 70th Street,,,,Miami,FL ,33143,US
-2999,2999,,17050 NE 19th Avenue,,,,Miami,FL ,33162,US
+2997,2997,,8205 Commerce Way,,,,Miami Lakes,FL ,33016,US
+2998,2998,,5860 SW 70th Street,,,,South Miami,FL ,33143,US
+2999,2999,,17050 NE 19th Avenue,,,,North Miami Beach,FL ,33162,US
 3000,3000,,10001 Hammocks Boulevard,,,,Miami,FL ,33196,US
 3001,3001,,4200 SW 142nd Avenue,,,,Miami,FL ,33175,US
 3002,3002,,8825 NW 18th Terrace,,,,Miami,FL ,33172,US
 3003,3003,,15250 NW 27th Avenue,,,,Opa Locka,FL ,33054,US
-3004,3004,,9788 Hibiscus Street,,,,Miami,FL ,33157,US
+3004,3004,,9788 Hibiscus Street,,,,Perrine,FL ,33157,US
 3005,3005,,16250 SW 72nd Street,,,,Miami,FL ,33193,US
 3006,3006,,2601 Point East Drive,,,,Aventura,FL ,33160,US
-3007,3007,,10850 SW 57th Avenue,,,,Miami,FL ,33156,US
+3007,3007,,10850 SW 57th Avenue,,,,Pinecrest,FL ,33156,US
 3008,3008,,15890 SW 288th Street,,,,Homestead,FL ,33033,US
 3009,3009,,3190 NW 119th Street,,,,Miami,FL ,33167,US
 3010,3010,,6625 Miami Lakes Drive,Suite 328,,,Hialeah,FL ,33014,US
@@ -2009,10 +2006,6 @@ id,location_id,attention,address_1,address_2,address_3,address_4,city,state_prov
 4400,4400,,1611 NW 12th Avenue,ACC West 401,,,Miami,FL ,33136,US
 4402,4402,,1100 NW 95th Street,Griffith Cancer Center,,,Miami,FL ,33150,US
 4407,4407,,8900 North Kendall Drive,,,,Miami,FL ,33176,US
-4408,4408,,1990 NE 163rd Street,Suite 102,,,Miami,FL ,33162,US
-4409,4409,,1990 NE 163rd Street,Suite 102,,,Miami,FL ,33162,US
-4410,4410,,1990 NE 163rd Street,Suite 102,,,Miami,FL ,33162,US
-4411,4411,,1990 NE 163rd Street,Suite 102,,,Miami,FL ,33162,US
 4414,4414,,10015 Overseas Highway,100th Street Center,,,Marathon,FL ,33050,US
 4415,4415,,401 NW 2nd Avenue,Suite N220,,,Miami,FL ,33128,US
 4416,4416,,401 NW 2nd Avenue,Suite N20-2,,,Miami,FL ,33128,US
@@ -2240,7 +2233,6 @@ id,location_id,attention,address_1,address_2,address_3,address_4,city,state_prov
 5238,5238,,17001 NW 20th Avenue,,,,Miami Gardens,FL ,33056,US
 5240,5240,,415 Colorado Avenue Immokalee,,,,Immokalee,FL ,34142,US
 5242,5242,,121 Goodlette Road North,,,,Naples,FL ,34102,US
-5243,5243,,121 Goodlette Road North,,,,Naples,FL ,34102,US
 5244,5244,,8833 Tamiami Trail East,,,,Naples,FL ,34112,US
 5249,5249,,9780 E Indigo Street,Suite 302,,,Miami,FL ,33157,US
 5251,5251,,852 1st Avenue South,Suite 201,,,Naples,FL ,34102,US
@@ -2327,17 +2319,11 @@ id,location_id,attention,address_1,address_2,address_3,address_4,city,state_prov
 5409,5409,,16140 NE 18th Avenue,,,,Miami,FL ,33162,US
 5410,5410,,1536 NE 179 Street,,,,Miami,FL ,33162,US
 5411,5411,,17101 NE 7 Avenue,,,,Miami,FL ,33162,US
-5416,5416,,121 Goodlette Road North,,,,Naples,FL ,34102,US
-5417,5417,,121 Goodlette Road North,,,,Naples,FL ,34102,US
-5418,5418,,121 Goodlette Road North,,,,Naples,FL ,34102,US
-5419,5419,,121 Goodlette Road North,,,,Naples,FL ,34102,US
-5420,5420,,121 Goodlette Road North,,,,Naples,FL ,34102,US
-5421,5421,,121 Goodlette Road North,,,,Naples,FL ,34102,US
 5422,5422,,535 Pine Island Road,Suite M,,,North Fort Myers,FL ,33903,US
 5423,5423,,535 Pine Island Road,Suite M,,,North Fort Myers,FL ,33903,US
 5424,5424,,PO Box 70949,,,,Houston,TX ,77270,US
 5431,5431,,1900 Biscayne Boulevard,Suite 200,,,Miami,FL ,33132,US
-5432,5432,,6101 Blue Lagoon Drive,Suite 430,,,Miami,FL ,33126,US
+5432,5432,,11380 NW 27th Avenue,Room 2216-2,,,Miami,FL ,33167,US
 5434,5434,,2231 Prairie Avenue,Room 328,,,Miami Beach,FL ,33139,US
 5436,5436,,1495 Smith Preserve Way,,,,Naples,FL ,34102,US
 5437,5437,,1495 Smith Preserve Way,,,,Naples,FL ,34102,US
@@ -2427,7 +2413,6 @@ id,location_id,attention,address_1,address_2,address_3,address_4,city,state_prov
 5608,5608,,6324 Trail Boulevard,Building C,,,Naples,FL ,34108,US
 5609,5609,,2780 SW 37th Avenue,Suite 206,,,Miami,FL ,33133,US
 5610,5610,,2780 SW 37th Avenue,Suite 206,,,Miami,FL ,33133,US
-5611,5611,,2780 SW 37th Avenue,Suite 206,,,Miami,FL ,33133,US
 5616,5616,,2780 SW 37th Avenue,Suite 206,,,Miami,FL ,33133,US
 5617,5617,,2780 SW 37th Avenue,Suite 206,,,Miami,FL ,33133,US
 5619,5619,,8300 Radio Road,,,,Naples,FL ,34104,US
@@ -2489,10 +2474,9 @@ id,location_id,attention,address_1,address_2,address_3,address_4,city,state_prov
 5738,5738,,500 NW 122nd Avenue,,,,Miami,FL ,33182,US
 5739,5739,,9500 SW 16th Street,,,,Miami,FL ,33165-7667,US
 5740,5740,,1100 NW 71st Street,,,,Miami,FL ,33150,US
-5754,5754,,121 Goodlette Road North,,,,Naples,FL ,34102,US
 5755,5755,,1003 3rd Avenue North,,,,Naples,FL ,34102,US
 5756,5756,,1003 3rd Avenue North,,,,Naples,FL ,34102,US
-5757,5757,,N.E. 8th Avenue,,,,Miami,FL ,33168,US
+5757,5757,,NE 8th Avenue,,,,Miami,FL ,33168,US
 5759,5759,,10200 NW 116th Way,,,,Miami,FL ,33178,US
 5762,5762,,1350 SE 24th Street,,,,Homestead,FL ,33032,US
 5763,5763,,3100 SE 8th Street,,,,Homestead,FL ,33033,US
@@ -3037,7 +3021,6 @@ id,location_id,attention,address_1,address_2,address_3,address_4,city,state_prov
 6884,6884,,P.O. Box 5816,,,,Key West,FL ,33045,US
 6886,6886,,401 NW 2nd Avenue,Suite N-1007,,,Miami,FL ,33128,US
 6887,6887,,181 NE 82nd Street,Suite 101,,,Miami,FL ,33138,US
-6888,6888,,2490 Coral Way,,,,Miami,FL ,33145-3449,US
 6890,6890,,3250 SW 3rd Avenue,,,,Miami,FL ,33129,US
 6892,6892,,444 SW 2nd Avenue,2nd Floor,,,Miami,FL ,33130,US
 6893,6893,,444 SW 2nd Avenue,2nd Floor,,,Miami,FL ,33130,US
@@ -3270,8 +3253,6 @@ id,location_id,attention,address_1,address_2,address_3,address_4,city,state_prov
 7230,7230,,4898 Coronado Parkway,,,,Naples,FL ,34116,US
 7231,7231,,6261 Coral Lake Drive,,,,Miami,FL ,33155,US
 7232,7232,,190 NE 3rd Street,,,,Miami,FL ,33132,US
-7233,7233,,2000 South Dixie Highway,Suite 104,,,Miami,FL ,33133,US
-7234,7234,,777 Brickell Avenue,Suite 800,,,Miami,FL ,33131,US
 7235,7235,,2020 NE 163 Street,Suite 300,,,Miami,FL ,33162,US
 7236,7236,,9260 Sunset Drive,Suite 203,,,Miami,FL ,33173,US
 7238,7238,,2802 Aloma Ave,Suite 102,,,Winter Park,FL ,32792,US
@@ -3334,7 +3315,7 @@ id,location_id,attention,address_1,address_2,address_3,address_4,city,state_prov
 7306,7306,,1650 NE 141st Street,,,,North Miami,FL ,33181,US
 7307,7307,,1650 NE 141st Street,,,,North Miami,FL ,33181,US
 7309,7309,,3060 SW 85th Avenue,,,,Miami,FL ,33155,US
-7310,7310,,632 Washington Avenue,,,,Homestead,FL ,33033,US
+7310,7310,,1690 NE 8th Street,,,,Homestead,FL ,33033,US
 7313,7313,,1350 SW 4th Street,,,,Miami,FL ,33132,US
 7314,7314,,151 NW 11th Street,Suite 400,,,Homestead,FL ,33030,US
 7315,7315,,151 NW 11th Street,Suite 400,,,Homestead,FL ,33030,US
@@ -3750,7 +3731,7 @@ id,location_id,attention,address_1,address_2,address_3,address_4,city,state_prov
 7798,7798,,99198 Overseas Highway,Suite 5,,,Key Largo,FL ,33037,US
 7799,7799,,3000 41st Street - Ocean,,,,Marathon,FL ,33050,US
 7801,7801,,14682 SW 50th Terrace,,,,Miami,FL ,33175,US
-7802,7802,,3250 Mary Street,Suite 201,,,Coconut Grove,FL ,33133,US
+7802,7802,,2665 S Bayshore Drive,Suite 220,,,Coconut Grove,FL ,33133,US
 7803,7803,,3310 North Federal Highway,,,,Pompano Beach,FL ,33064,US
 7804,7804,,1840 West 49th Street,Suite 229,,,Hialeah,FL ,33012,US
 7805,7805,,1840 West 49th Street,Suite 229,,,Hialeah,FL ,33012,US
@@ -3773,7 +3754,7 @@ id,location_id,attention,address_1,address_2,address_3,address_4,city,state_prov
 7826,7826,,21150 Biscayne Boulevard,Suite 408,,,Aventura,FL ,33180,US
 7828,7828,,7150 W 20th Avenue,Suite 106,,,Hialeah,FL ,33016,US
 7829,7829,,475 Biltmore Way,Suite 311,,,Coral Gables,FL ,33134,US
-7830,7830,,1000 Ponce de Leon Boulevard,Suite 311,,,Miami,FL ,33134,US
+7830,7830,,12252 SW 128th Court,Unit 110,,,Miami,FL ,33186,US
 7832,7832,,2727 Mahan Drive,,,,Tallahassee,FL ,32308,US
 7833,7833,,992 West 23rd Street,,,,Hialeah,FL ,33010,US
 7834,7834,,992 West 23rd Street,,,,Hialeah,FL ,33010,US
@@ -3793,7 +3774,6 @@ id,location_id,attention,address_1,address_2,address_3,address_4,city,state_prov
 7848,7848,,12485 SW 137th Avenue,Suite 109,,,Miami,FL ,33186,US
 7849,7849,,6745 NW 23rd Avenue,,,,Miami,FL ,33147,US
 7850,7850,,700 NE 137th Street,,,,Miami,FL ,33161,US
-7851,7851,,2310 SE 2nd Street,Suite 7,,,Boynton Beach,FL ,33435,US
 7852,7852,,851 SW 117th Avenue,,,,Miami,FL ,33184,US
 7853,7853,,3050 North Horseshoe Drive,Unit 231,,,Naples,FL ,34104,US
 7854,7854,,3050 North Horseshoe Drive,Unit 231,,,Naples,FL ,34104,US
@@ -4093,7 +4073,7 @@ id,location_id,attention,address_1,address_2,address_3,address_4,city,state_prov
 8167,8167,,13540 SW 135th Avenue,,,,Miami,FL ,33186,US
 8168,8168,,971 NW 2nd Street,,,,Miami,FL ,33128,US
 8169,8169,,1040 Bayview Drive,Suite 318,,,Fort Lauderdale,FL ,33304,US
-8171,8171,,34 Pirates Drive,,,,Key Largo,FL ,33037,US
+8171,8171,,92300 Overseas Hwy,,,,Tavernier,FL ,33070,US
 8172,8172,,34 Pirates Drive,,,,Key Largo,FL ,33037,US
 8173,8173,,14411 Commerce Way,Suite 310,,,Hialeah,FL ,33016,US
 8174,8174,,481 Grand Canal Drive,,,,Miami,FL ,33144,US
@@ -4169,3 +4149,6 @@ id,location_id,attention,address_1,address_2,address_3,address_4,city,state_prov
 8247,8247,,1267 NW 40th Avenue,,,,Lauderhill,FL ,33313,US
 8248,8248,,5199 Pembroke Road,,,,Hollywood,FL ,33021,US
 8249,8249,,101 West Flagler Street,,,,Miami,FL ,33130,US
+8250,8250,,5825 SW 68th Street,Suite 101,,,Miami,FL ,33143,US
+8251,8251,,10664 SW 186th Street,,,,Miami,FL ,33157,US
+8252,8252,,1550 South Dixie Highway,Suite 203,,,Miami,FL ,33146,US

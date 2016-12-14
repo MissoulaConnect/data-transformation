@@ -46,24 +46,31 @@ insert into hsds_service(
   status,
   application_process,
   wait_time,
-  description
+  description,
+  taxonomy_ids
 )
-select s.provider_service_code_id as id,
+select tp.program_id as id,
 		tp.organization_id,
 		tp.program_id,
 		l.id as location_id,
-		s.taxonomy_name as name,
+		sp.provider_name as name,
 		null as alternate_name,
 		sp.website_address as url,
 		null as email,
 		'active' as status,
 		sp.intake_procedure as application_process,
 		null as wait_time,
-		'None provided'
-from src_provider_taxonomy s
-inner join tmp_program tp on s.provider_id = tp.agency_id
+		'None provided' as description,
+		t.taxonomy_ids
+from src_provider sp
+inner join tmp_program tp on sp.provider_id = tp.agency_id
 inner join hsds_program p on tp.program_id = p.id
 inner join hsds_organization o on tp.organization_id = o.id
 inner join hsds_location l on tp.program_id = l.id
-inner join src_provider sp on tp.agency_id = sp.provider_id
-where s.taxonomy_facet = 'Service';
+left outer join (
+    select provider_id, GROUP_CONCAT(taxonomy_code) as taxonomy_ids
+    from src_provider_taxonomy
+    where taxonomy_code in (select TaxonomyCode from tmp_taxonomy)
+    group by provider_id
+) t on sp.provider_id = t.provider_id   
+where sp.provider_id in (select provider_id from src_provider_taxonomy where taxonomy_facet = 'Service');

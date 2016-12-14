@@ -14,4 +14,3 @@ drop table if exists hsds_phone;
 drop table if exists hsds_physical_address;
 drop table if exists meta_error;
 drop table if exists hsds_taxonomy;
-drop table if exists tmp_taxonomy;

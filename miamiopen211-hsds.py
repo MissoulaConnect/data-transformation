@@ -102,10 +102,17 @@ def main():
 
         tableName = 'dbo.provider_taxonomy'    
         sqlQuery = 'select * from ' + tableName + ';'   
+        dfProviderTaxonomy = pd.DataFrame()           
+        dfProviderTaxonomy, returnCode = getTable(sqlQuery, tableName, engine)
+        if returnCode is not None:
+            return
+            
+        tableName = 'dbo.taxonomy'    
+        sqlQuery = 'select * from ' + tableName + ';'   
         dfTaxonomy = pd.DataFrame()           
         dfTaxonomy, returnCode = getTable(sqlQuery, tableName, engine)
         if returnCode is not None:
-            return
+            return            
 
         # Close connection
         try:
@@ -125,6 +132,7 @@ def main():
             etl_timestamp = datetime.datetime.utcnow()    
             dfProvider['etl_timestamp'] = etl_timestamp
             dfTargetPopulation['etl_timestamp'] = etl_timestamp
+            dfProviderTaxonomy['etl_timestamp'] = etl_timestamp
             dfTaxonomy['etl_timestamp'] = etl_timestamp
             print(strftime('%X'), 'Added etl_timestamp: ',etl_timestamp)
         except:
@@ -135,7 +143,8 @@ def main():
         try:
             dfProvider.set_index(['provider_id'], inplace=True)
             dfTargetPopulation.set_index(['provider_service_code_id', 'target_population_code'], inplace=True)
-            dfTaxonomy.set_index(['provider_service_code_id'], inplace=True)
+            dfProviderTaxonomy.set_index(['provider_service_code_id'], inplace=True)
+            dfTaxonomy.set_index(['TaxonomyCode'], inplace=True)
             print(strftime('%X'), 'Added index(es)')
         except:
             print(strftime('%X'), 'Error adding index(es):', sys.exc_info()[0])  
@@ -159,7 +168,7 @@ def main():
         print(sys.exc_info()[2])
         return
         
-    # Load    
+    # Load        
     # Add tables to db
     #     Create the table if it doesn't exist
     #     Use src_ schema
@@ -168,7 +177,8 @@ def main():
         try:
             dfProvider.to_sql('src_provider', engine, if_exists='replace', index=True)
             dfTargetPopulation.to_sql('src_provider_target_population', engine, if_exists='replace', index=True)       
-            dfTaxonomy.to_sql('src_provider_taxonomy', engine, if_exists='replace', index=True)         
+            dfProviderTaxonomy.to_sql('src_provider_taxonomy', engine, if_exists='replace', index=True)         
+            dfTaxonomy.to_sql('src_taxonomy', engine, if_exists='replace', index=True)            
             session.commit()                 
             print(strftime('%X'), 'Incoming tables saved')                                        
         except:
@@ -185,7 +195,38 @@ def main():
         except:
             print(strftime('%X'), 'Error closing sqlite database:', sys.exc_info()[0])    
             print(sys.exc_info()[2])
-          
+
+    # Update taxonomy           
+    # Extract
+    print(strftime('%X'), 'Extract Taxonomy')
+    tableName = 'src_taxonomy'    
+    sqlQuery = 'select * from ' + tableName + ';'   
+    dfTaxonomy = pd.DataFrame()           
+    dfTaxonomy, returnCode = getTable(sqlQuery, tableName, engine)
+    if returnCode is not None:
+        return            
+
+    # Transform
+    try:
+        dfTaxonomy['TaxonomyCode_Updated'] = dfTaxonomy['TaxonomyCode'].str.replace('-','.')
+        dfTaxonomy['ParentCode_Updated'] = dfTaxonomy['TaxonomyCode_Updated'].apply(lambda x: x.rsplit('.', 1)[0])
+        dfTaxonomy.set_index(['TaxonomyCode'], inplace=True)
+    except:
+        print(strftime('%X'), 'Error extracting taxonomy:', sys.exc_info()[0])    
+        print(sys.exc_info()[2])
+        return
+
+    # Load
+    try:
+        dfTaxonomy.to_sql('tmp_taxonomy', engine, if_exists='replace', index=True)            
+        session.commit()                 
+        print(strftime('%X'), 'Updated Taxonomy table saved')                                        
+    except:
+        session.rollback()
+        print(strftime('%X'), 'Error saving updated Taxonomy table:', sys.exc_info()[0])  
+        print(sys.exc_info()[2])        
+        return        
+    
     # Extract & Transform
     # Get subset of HSDS from existing data
     #   Drop existing HSDS tables
@@ -247,6 +288,15 @@ def main():
             print(strftime('%X'), 'Error creating csv', csvName, sys.exc_info()[0])  
             print(sys.exc_info()[2])        
             return        
+
+    # Close connection
+    try:
+        session.close()
+        engine.dispose()
+        print(strftime('%X'), 'Disconnected from sqlite database')        
+    except:
+        print(strftime('%X'), 'Error closing sqlite database:', sys.exc_info()[0])    
+        print(sys.exc_info()[2])
               
     print(strftime('%X'), 'Complete')    
 if __name__ == "__main__":
